@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:todo_list_provider/app/core/database/sqlite_connection_factory.dart';
-import 'package:todo_list_provider/app/core/database/sqlite_migration_factory.dart';
 
 class SqliteAdmConnection with WidgetsBindingObserver {
   @override
