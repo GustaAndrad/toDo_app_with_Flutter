@@ -1,6 +1,6 @@
 # Todo list App
 
-Projeto flutter em andamento... 
+Projeto de estudo flutter em andamento... 
 
 <br>
 
