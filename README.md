@@ -15,6 +15,8 @@ Projeto de estudo de flutter em andamento...
 
 <br />
 
+  Icone do app / tela de login / tela de cadastro
+
   <a>
     <img src="assets\screenshots\icone_print.jpeg" alt="Logo" width="180" height="390">
     <img src="assets\screenshots\Login_print.jpeg" alt="Logo" width="180" height="390">
