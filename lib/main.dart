@@ -6,7 +6,7 @@ import 'package:todo_list_provider/app/app_module.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: false,
       builder: (_) => const AppModule(),
     ),
   );

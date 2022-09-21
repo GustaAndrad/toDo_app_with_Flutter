@@ -12,122 +12,141 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: constraints.maxHeight,
-                minWidth: constraints.maxWidth,
-              ),
-              child: IntrinsicHeight(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const SizedBox(height: 60),
-                    const TodoListLogo(),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 20),
-                      child: Form(
-                        child: Column(
-                          children: [
-                            TodoListField(
-                              label: 'E-mail',
-                            ),
-                            const SizedBox(height: 20),
-                            TodoListField(
-                              label: 'Password',
-                              obscureText: true,
-                            ),
-                            const SizedBox(height: 10),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://static.wikia.nocookie.net/afca1f5b-149d-44e7-bd53-9dfeef2ca674/scale-to-width/755'),
+                  fit: BoxFit.cover),
+            ),
+          ),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: constraints.maxHeight,
+                    minWidth: constraints.maxWidth,
+                  ),
+                  child: IntrinsicHeight(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(height: 60),
+                        const TodoListLogo(),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 20),
+                          child: Form(
+                            child: Column(
                               children: [
-                                TextButton(
-                                  onPressed: () {},
-                                  child: const Text(
-                                    'Esqueceu sua senha?',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 234, 173, 250),
-                                    ),
-                                  ),
+                                TodoListField(
+                                  label: 'E-mail',
                                 ),
-                                ElevatedButton(
-                                  onPressed: () {},
-                                  child: const Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: Text(
-                                      'Login',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15),
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                  ),
+                                const SizedBox(height: 20),
+                                TodoListField(
+                                  label: 'Password',
+                                  obscureText: true,
                                 ),
+                                const SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: const Text(
+                                        'Esqueceu sua senha?',
+                                        style: TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 234, 173, 250),
+                                        ),
+                                      ),
+                                    ),
+                                    ElevatedButton(
+                                      onPressed: () {},
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(12.0),
+                                        child: Text(
+                                          'Login',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15),
+                                        ),
+                                      ),
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
                               ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff130D37),
-                          border: Border(
-                            top: BorderSide(
-                              width: 5,
-                              color: Colors.purpleAccent.withOpacity(0.1),
                             ),
                           ),
                         ),
-                        child: Column(
-                          children: [
-                            const SizedBox(height: 30),
-                            SignInButton(
-                              Buttons.Google,
-                              text: 'Continue com o Google',
-                              padding: const EdgeInsets.all(5),
-                              shape: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide.none),
-                              onPressed: () {},
+                        const SizedBox(height: 20),
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 8, 0, 56),
+                              border: Border(
+                                top: BorderSide(
+                                  width: 5,
+                                  color: Colors.purpleAccent.withOpacity(0.1),
+                                ),
+                              ),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                            child: Column(
                               children: [
-                                const Text(
-                                  'Nao tem conta ? ',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                TextButton(
+                                const SizedBox(height: 30),
+                                SignInButton(
+                                  Buttons.Google,
+                                  text: 'Continue com o Google',
+                                  padding: const EdgeInsets.all(5),
+                                  shape: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide: BorderSide.none),
                                   onPressed: () {},
-                                  child: const Text(
-                                    'Cadastre-se',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 229, 128, 255),
-                                    ),
-                                  ),
                                 ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'Nao tem conta ? ',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context)
+                                            .pushNamed('/register');
+                                      },
+                                      child: const Text(
+                                        'Cadastre-se',
+                                        style: TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 229, 128, 255),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
                               ],
-                            )
-                          ],
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
-          );
-        },
+              );
+            },
+          ),
+        ],
       ),
     );
   }

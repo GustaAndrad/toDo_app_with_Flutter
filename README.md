@@ -11,12 +11,13 @@ Projeto de estudo de flutter em andamento...
 
 <br>
 
-## Prints
+## Screenshot
 
 <br />
 
   <a>
     <img src="assets\screenshots\icone_print.jpeg" alt="Logo" width="180" height="390">
     <img src="assets\screenshots\Login_print.jpeg" alt="Logo" width="180" height="390">
+    <img src="assets\screenshots\register_print.jpeg" alt="Logo" width="180"height="390">
 </a>
 </div>
