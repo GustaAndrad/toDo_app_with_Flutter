@@ -101,41 +101,43 @@ class LoginPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            child: Column(
-                              children: [
-                                const SizedBox(height: 30),
-                                SignInButton(
-                                  Buttons.Google,
-                                  text: 'Continue com o Google',
-                                  padding: const EdgeInsets.all(5),
-                                  shape: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                      borderSide: BorderSide.none),
-                                  onPressed: () {},
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text(
-                                      'Nao tem conta ? ',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context)
-                                            .pushNamed('/register');
-                                      },
-                                      child: const Text(
-                                        'Cadastre-se',
-                                        style: TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 229, 128, 255),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  const SizedBox(height: 30),
+                                  SignInButton(
+                                    Buttons.Google,
+                                    text: 'Continue com o Google',
+                                    padding: const EdgeInsets.all(5),
+                                    shape: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                        borderSide: BorderSide.none),
+                                    onPressed: () {},
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        'Nao tem conta ? ',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .pushNamed('/register');
+                                        },
+                                        child: const Text(
+                                          'Cadastre-se',
+                                          style: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 229, 128, 255),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                )
-                              ],
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
