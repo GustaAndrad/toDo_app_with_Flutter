@@ -35,7 +35,7 @@ class DefaultListenerNotifier {
         Messages.of(context).showError(changeNotifier.error ?? 'Erro interno');
       } else if (changeNotifier.isSucess) {
         sucessCallBack(changeNotifier, this);
-        Messages.of(context).showInfo('Cadastro feito com sucesso!!');
+        Messages.of(context).showInfo('Cadastro realizado com sucesso!!');
       }
     });
   }
