@@ -7,8 +7,20 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: TodoListLogo(),
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://static.wikia.nocookie.net/afca1f5b-149d-44e7-bd53-9dfeef2ca674/scale-to-width/755'),
+                  fit: BoxFit.cover),
+            ),
+          ),
+          Center(
+            child: TodoListLogo(),
+          ),
+        ],
       ),
     );
   }
