@@ -1,5 +1,8 @@
+// ignore_for_file: body_might_complete_normally_nullable
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:todo_list_provider/app/exception/auth_exception.dart';
 import 'package:todo_list_provider/app/repositories/user/user_repository.dart';
 
@@ -73,6 +76,41 @@ class UserRepositoryImpl implements UserRepository {
       print(e);
       print(s);
       throw AuthException(message: 'Erro ao resetar a senha ');
+    }
+  }
+
+  @override
+  Future<User?> googleLogin() async {
+    List<String>? loginMethods;
+    try {
+      final googleSignIn = GoogleSignIn();
+      final googleUser = await googleSignIn.signIn();
+      if (googleUser != null) {
+        loginMethods =
+            await _firebaseAuth.fetchSignInMethodsForEmail(googleUser.email);
+
+        if (loginMethods.contains('password')) {
+          throw AuthException(message: 'Você já se cadastrou com este email');
+        } else {
+          final googleAuth = await googleUser.authentication;
+          final firebaseCredencial = GoogleAuthProvider.credential(
+              accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
+          var userCredencial =
+              await _firebaseAuth.signInWithCredential(firebaseCredencial);
+          return userCredencial.user;
+        }
+      }
+    } on FirebaseAuthException catch (e, s) {
+      print(e);
+      print(s);
+      if (e.code == 'account-exists-with-different-credential') {
+        throw AuthException(message: '''
+          Login invalido, você se registrou com os seguintes provedores:
+          ${loginMethods?.join(',')}
+          ''');
+      } else {
+        throw AuthException(message: 'Erro ao realizar login');
+      }
     }
   }
 }

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "833134045072-ad98q7dt3hd56k1iu8vn8hcoinch2ulu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.gustadev.todo_list_provider",
+            "certificate_hash": "764ac691488816b7ca91323c9fa726f005fc0056"
+          }
+        },
+        {
           "client_id": "833134045072-hrcik838e6s6a5gkb8tfq20mqntmcg8t.apps.googleusercontent.com",
           "client_type": 3
         }
