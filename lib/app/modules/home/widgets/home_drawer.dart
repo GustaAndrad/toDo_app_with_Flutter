@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/auth/auth_provider.dart';
 import 'package:todo_list_provider/app/core/ui/messages.dart';
@@ -20,6 +21,17 @@ class HomeDrawer extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(
               color: context.primaryColor,
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
+              ),
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment(0.8, 1),
+                  colors: [
+                    Color.fromARGB(255, 145, 40, 167),
+                    Color.fromARGB(255, 21, 1, 95),
+                    context.primaryColor
+                  ]),
               boxShadow: [
                 BoxShadow(
                   color: Color.fromARGB(255, 139, 0, 167),
