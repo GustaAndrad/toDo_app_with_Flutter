@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/auth/auth_provider.dart';
 import 'package:todo_list_provider/app/core/ui/messages.dart';
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
+import 'package:todo_list_provider/app/core/widget/todo_list_footer.dart';
 import 'package:todo_list_provider/app/services/user/user_service.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -14,11 +14,24 @@ class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.black12,
       child: ListView(
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: context.primaryColor.withAlpha(70),
+              color: context.primaryColor,
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromARGB(255, 139, 0, 167),
+                  blurRadius: 15,
+                  offset: Offset(-10, 5),
+                ),
+                BoxShadow(
+                  color: Color.fromARGB(255, 29, 109, 201),
+                  blurRadius: 15,
+                  offset: Offset(-5, -10),
+                ),
+              ],
             ),
             child: Row(
               children: [
@@ -38,7 +51,7 @@ class HomeDrawer extends StatelessWidget {
                         Selector<AuthProvider, String>(builder: (_, value, __) {
                       return Text(
                         value,
-                        style: context.textTheme.subtitle2,
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       );
                     }, selector: (context, authProvider) {
                       return authProvider.user?.displayName ?? 'Não informado';
@@ -54,9 +67,12 @@ class HomeDrawer extends StatelessWidget {
                 context: context,
                 builder: (_) {
                   return AlertDialog(
-                    title: Text('Alterar Nome'),
+                    backgroundColor: Colors.white10,
+                    title: Text('Digite seu nome'),
+                    titleTextStyle: TextStyle(color: Colors.white),
                     content: TextField(
                       onChanged: ((value) => nameVN.value = value),
+                      style: TextStyle(color: Colors.white),
                     ),
                     actions: [
                       TextButton(
@@ -85,12 +101,22 @@ class HomeDrawer extends StatelessWidget {
                 },
               );
             },
-            title: Text('Alterar nome'),
+            title: Text('Alterar meu nome'),
+            textColor: Colors.white,
+            trailing: Icon(Icons.edit),
+            iconColor: Color.fromARGB(255, 139, 0, 167),
           ),
           ListTile(
             onTap: () => context.read<AuthProvider>().logout(),
             title: Text('Sair'),
+            textColor: Colors.white,
+            trailing: Icon(Icons.exit_to_app_rounded),
+            iconColor: Color.fromARGB(255, 139, 0, 167),
           ),
+          SizedBox(
+            height: 480,
+          ),
+          TodoListFooter(),
         ],
       ),
     );

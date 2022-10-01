@@ -7,8 +7,8 @@ class TodoListUiConfig {
   static ThemeData get theme => ThemeData(
         textTheme: GoogleFonts.mandaliTextTheme(),
         scaffoldBackgroundColor: const Color(0xff1E1456),
-        primaryColor: const Color(0xff5C77CE),
-        primaryColorLight: const Color(0xffABC8F7),
+        primaryColor: Color.fromARGB(255, 8, 0, 56),
+        primaryColorLight: Color.fromARGB(255, 27, 0, 61),
         primaryColorDark: const Color(0xffABC8F7),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
