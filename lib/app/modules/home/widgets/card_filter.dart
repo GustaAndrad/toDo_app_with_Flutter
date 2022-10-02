@@ -19,7 +19,7 @@ class _CardFilterState extends State<CardFilter> {
       margin: EdgeInsets.only(right: 10),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.black26,
+        color: Colors.black12,
         border: Border.all(
           width: 1,
           color: Colors.purple.withOpacity(.5),

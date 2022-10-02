@@ -14,7 +14,7 @@ class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.black12,
+      backgroundColor: Colors.black87,
       child: ListView(
         children: [
           DrawerHeader(
@@ -79,6 +79,9 @@ class HomeDrawer extends StatelessWidget {
                 builder: (_) {
                   return AlertDialog(
                     backgroundColor: Colors.white10,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     title: Text('Digite seu nome'),
                     titleTextStyle: TextStyle(color: Colors.white),
                     content: TextField(

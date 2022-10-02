@@ -12,8 +12,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.black12,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         actions: [
           PopupMenuButton(
             icon: Icon(Icons.filter_alt_rounded),
@@ -24,34 +26,46 @@ class HomePage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: context.primaryColorLight,
         onPressed: () {},
         child: Icon(Icons.add),
       ),
       drawer: HomeDrawer(),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return Container(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: constraints.maxHeight,
-                minWidth: constraints.maxWidth,
+          return Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          'https://static.wikia.nocookie.net/afca1f5b-149d-44e7-bd53-9dfeef2ca674/scale-to-width/755'),
+                      fit: BoxFit.cover),
+                ),
               ),
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                child: IntrinsicHeight(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      HomeHeader(),
-                      HomeFilters(),
-                      HomeWeekFilter(),
-                      HomeTasks(),
-                    ],
+              Container(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: constraints.maxHeight,
+                    minWidth: constraints.maxWidth,
+                  ),
+                  child: Container(
+                    margin: EdgeInsets.only(left: 20, top: 60),
+                    child: IntrinsicHeight(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          HomeHeader(),
+                          HomeFilters(),
+                          HomeWeekFilter(),
+                          HomeTasks(),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+            ],
           );
         },
       ),

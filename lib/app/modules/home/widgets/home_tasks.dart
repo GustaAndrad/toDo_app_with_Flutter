@@ -9,32 +9,35 @@ class HomeTasks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'TASK\'S DE HOJE',
-              style: context.titleStyleHome,
-            ),
-            Column(
-              children: [
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-                Task(),
-              ],
-            )
-          ],
+        child: Container(
+          margin: EdgeInsets.only(right: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'TASK\'S DE HOJE',
+                style: context.titleStyleHome,
+              ),
+              Column(
+                children: [
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                  Task(),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

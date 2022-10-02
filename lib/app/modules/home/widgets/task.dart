@@ -8,8 +8,18 @@ class Task extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: context.primaryColor,
+        color: context.primaryColor.withOpacity(0.8),
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: context.primaryColorLight.withOpacity(0.2),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            blurRadius: 5,
+            offset: Offset(2, 2),
+          ),
+        ],
       ),
       margin: EdgeInsets.symmetric(vertical: 5),
       child: IntrinsicHeight(
