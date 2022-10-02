@@ -28,19 +28,20 @@ class HomeDrawer extends StatelessWidget {
                   end: Alignment(0.8, 1),
                   colors: [
                     Color.fromARGB(255, 145, 40, 167),
+                    Color.fromARGB(255, 77, 0, 128),
                     Color.fromARGB(255, 21, 1, 95),
                     context.primaryColor
                   ]),
               boxShadow: [
                 BoxShadow(
-                  color: Color.fromARGB(255, 139, 0, 167),
+                  color: Color.fromRGBO(139, 0, 167, 0.7),
                   blurRadius: 15,
                   offset: Offset(-10, 5),
                 ),
                 BoxShadow(
-                  color: Color.fromARGB(255, 29, 109, 201),
-                  blurRadius: 15,
-                  offset: Offset(-5, -10),
+                  color: Color.fromRGBO(29, 109, 201, 0.5),
+                  blurRadius: 10,
+                  offset: Offset(-1, -2),
                 ),
               ],
             ),

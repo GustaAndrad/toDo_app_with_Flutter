@@ -46,7 +46,9 @@ class _CardFilterState extends State<CardFilter> {
           ),
           LinearProgressIndicator(
             backgroundColor: Colors.purple.withOpacity(0.3),
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.cyan),
+            valueColor: AlwaysStoppedAnimation<Color>(
+              Color.fromARGB(255, 109, 255, 255),
+            ),
             value: 0.4,
           ),
         ],

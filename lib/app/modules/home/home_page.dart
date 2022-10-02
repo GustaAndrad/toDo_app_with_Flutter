@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
+import 'package:todo_list_provider/app/modules/home/widgets/home_background.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_drawer.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_filters.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_header.dart';
@@ -20,7 +21,9 @@ class HomePage extends StatelessWidget {
           PopupMenuButton(
             icon: Icon(Icons.filter_alt_rounded),
             itemBuilder: (_) => [
-              PopupMenuItem<bool>(child: Text('Mostrar tarefas concluidas'))
+              PopupMenuItem<bool>(
+                child: Text('Mostrar tarefas concluidas'),
+              )
             ],
           )
         ],
@@ -35,14 +38,7 @@ class HomePage extends StatelessWidget {
         builder: (context, constraints) {
           return Stack(
             children: [
-              Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          'https://static.wikia.nocookie.net/afca1f5b-149d-44e7-bd53-9dfeef2ca674/scale-to-width/755'),
-                      fit: BoxFit.cover),
-                ),
-              ),
+              HomeBackground(),
               Container(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
