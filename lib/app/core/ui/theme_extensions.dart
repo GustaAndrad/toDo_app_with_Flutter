@@ -20,4 +20,15 @@ extension ThemeExtension on BuildContext {
               color: Color.fromARGB(255, 94, 0, 110))
         ],
       );
+  TextStyle get titleStyleHome => const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: Colors.grey,
+        shadows: <Shadow>[
+          Shadow(
+              blurRadius: 5,
+              offset: Offset(1, 1),
+              color: Color.fromARGB(255, 94, 0, 110))
+        ],
+      );
 }

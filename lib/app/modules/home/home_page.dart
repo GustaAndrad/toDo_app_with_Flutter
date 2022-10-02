@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_drawer.dart';
+import 'package:todo_list_provider/app/modules/home/widgets/home_filters.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_header.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,7 +34,10 @@ class HomePage extends StatelessWidget {
                 child: IntrinsicHeight(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [HomeHeader()],
+                    children: [
+                      HomeHeader(),
+                      HomeFilters(),
+                    ],
                   ),
                 ),
               ),
