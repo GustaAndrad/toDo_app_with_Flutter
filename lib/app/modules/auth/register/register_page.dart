@@ -8,6 +8,8 @@ import 'package:todo_list_provider/app/core/widget/todo_list_logo.dart';
 import 'package:todo_list_provider/app/modules/auth/register/register_controller.dart';
 import 'package:validatorless/validatorless.dart';
 
+import '../../home/widgets/home_background.dart';
+
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
 
@@ -83,16 +85,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       body: Stack(
         children: [
-          SizedBox(
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        'https://static.wikia.nocookie.net/afca1f5b-149d-44e7-bd53-9dfeef2ca674/scale-to-width/755'),
-                    fit: BoxFit.cover),
-              ),
-            ),
-          ),
+          HomeBackground(),
           ListView(
             children: [
               SizedBox(height: 30),

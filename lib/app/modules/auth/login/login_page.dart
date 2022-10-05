@@ -11,6 +11,8 @@ import 'package:todo_list_provider/app/core/widget/todo_list_logo.dart';
 import 'package:todo_list_provider/app/modules/auth/login/login_controller.dart';
 import 'package:validatorless/validatorless.dart';
 
+import '../../home/widgets/home_background.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -46,14 +48,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(
-                      'https://static.wikia.nocookie.net/afca1f5b-149d-44e7-bd53-9dfeef2ca674/scale-to-width/755'),
-                  fit: BoxFit.cover),
-            ),
-          ),
+          HomeBackground(),
           LayoutBuilder(
             builder: (context, constraints) {
               return SingleChildScrollView(
