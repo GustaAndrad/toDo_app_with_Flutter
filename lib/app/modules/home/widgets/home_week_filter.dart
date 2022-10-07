@@ -28,16 +28,25 @@ class HomeWeekFilter extends StatelessWidget {
           ),
           Container(
             height: 95,
-            child: DatePicker(
-              DateTime.now(),
-              locale: 'pt_BR',
-              initialSelectedDate: DateTime.now(),
-              selectionColor: context.primaryColor.withOpacity(.6),
-              selectedTextColor: Colors.white,
-              daysCount: 7,
-              monthTextStyle: TextStyle(fontSize: 8),
-              dayTextStyle: TextStyle(fontSize: 13),
-              dateTextStyle: TextStyle(fontSize: 14),
+            child: Selector<HomeController, DateTime>(
+              selector: (context, controller) =>
+                  controller.initialDateOfWeek ?? DateTime.now(),
+              builder: (_, value, __) {
+                return DatePicker(
+                  value,
+                  locale: 'pt_BR',
+                  initialSelectedDate: value,
+                  selectionColor: context.primaryColor.withOpacity(.6),
+                  selectedTextColor: Colors.white,
+                  daysCount: 7,
+                  monthTextStyle: TextStyle(fontSize: 8),
+                  dayTextStyle: TextStyle(fontSize: 13),
+                  dateTextStyle: TextStyle(fontSize: 14),
+                  onDateChange: (date) {
+                    context.read<HomeController>().filterByDay(date);
+                  },
+                );
+              },
             ),
           )
         ],

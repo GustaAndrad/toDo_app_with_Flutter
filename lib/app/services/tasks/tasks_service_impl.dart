@@ -1,6 +1,6 @@
 import 'package:todo_list_provider/app/models/task_model.dart';
 import 'package:todo_list_provider/app/models/week_task_model.dart';
-import 'package:todo_list_provider/app/repositories/user/tasks/tasks_repository.dart';
+import 'package:todo_list_provider/app/repositories/tasks/tasks_repository.dart';
 
 import './tasks_service.dart';
 
@@ -45,4 +45,14 @@ class TasksServiceImpl implements TasksService {
       tasks: tasks,
     );
   }
+
+  @override
+  Future<void> checkOrUncheckTask(TaskModel task) =>
+      _tasksRepository.checkOrUncheckTask(task);
+
+  @override
+  Future<void> deleteAll() => _tasksRepository.deleteAll();
+
+  @override
+  Future<void> deleteById(int id) => _tasksRepository.deleteById(id);
 }
