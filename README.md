@@ -7,12 +7,7 @@
 
 # Todo list App
 
-<div style=
-"background-color: #263044;
- border-radius: 50px;
- font-size: 16px;
- ">
-
+<div>
   <a>
     <img src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif" alt="Logo" width="100">
   </a>
@@ -23,11 +18,7 @@
 <br>
 
 <div align="left"> 
-<details style="
-  border: solid 1px purple;
-  border-radius: 10px;
-  width: 200px;
-  ">
+<details>
   <summary>Conteudos aqui!</summary>
   <ol>
     <li>
@@ -58,7 +49,7 @@
 ## Sobre o projeto
 
   <a>
-    <img src="assets\screenshots\TodoApp.png" alt="Logo" width="700" height="auto">
+    <img src="assets\screenshots\TodoApp.png" alt="Logo">
   </a>
 
 Ainda novo na area de criação de aplicativos, porem com muito interesse em conhecer melhor a area de desenvolvimento mobile, realizei este meu primeiro aplicativo.
@@ -115,6 +106,8 @@ Confira os screenShots das telas do applicativos e suas funcionalidades.
 
  </div>
 
+ <p align="right">(<a href="#top">back to top</a>)</p>
+
  <br>
  <br>
  <br>
@@ -132,6 +125,8 @@ Confira os screenShots das telas do applicativos e suas funcionalidades.
 <p> Tela simples para cadastro, contendo a validação do formato de email valido e senha de no minimo 6 caracteres. </p>
 
  </div>
+
+ <p align="right">(<a href="#top">back to top</a>)</p>
 
  <br>
  <br>
@@ -162,6 +157,7 @@ Confira os screenShots das telas do applicativos e suas funcionalidades.
 Contém tambem na home page na area direita superior do aplicativo, um icone de filtro, que quando clicado é alterna entre mostrar ou nao as tarefas concluidas.
 E tambem um botão circular na area direita inferior para cadastrar novas tasks.
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <br>
  <br>
@@ -181,5 +177,7 @@ E tambem um botão circular na area direita inferior para cadastrar novas tasks.
 <p>Contem tambem função no menu lateral, a opção de alterar o nome, e a opção de Sair do App.</p>
 
  </div>
+
+ <p align="right">(<a href="#top">back to top</a>)</p>
 
 
