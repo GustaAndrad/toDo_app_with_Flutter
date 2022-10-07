@@ -108,7 +108,7 @@ Confira os screenShots das telas do applicativos e suas funcionalidades.
 
 <div align="center">
 <a>
-    <img src="assets\screenshots\login_print.jpeg" alt="login" width="150" height="auto">
+    <img src="assets\screenshots\login.jpeg" alt="login" width="150" height="auto">
 </a>
 
 <p> Na tela de login foi implementando o botão de <strong> ' Continue com o Google ' </strong>, com opção tambem de se cadastrar e caso tenha esquecido a senha possui o <strong> ' Esqueceu sua senha? ' </strong> que quando clicado é enviado instruçoes para redefinir senha para email inserido </p>
