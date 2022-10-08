@@ -32,6 +32,22 @@ class HomeTasks extends StatelessWidget {
                   );
                 },
               ),
+              Visibility(
+                visible: context.select<HomeController, bool>(
+                    (controller) => controller.showFinishingTasks),
+                child: TextButton.icon(
+                  onPressed: () =>
+                      context.read<HomeController>().showOrHideFinishingTasks(),
+                  icon: Icon(
+                    Icons.delete,
+                    color: context.primaryColor,
+                  ),
+                  label: Text(
+                    'LIMPAR FILTRO',
+                    style: context.titleStyle.copyWith(fontSize: 8),
+                  ),
+                ),
+              ),
               Column(
                   children: context
                       .select<HomeController, List<TaskModel>>(
