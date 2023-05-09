@@ -61,7 +61,7 @@ Decidi fazer um aplicativo para listar tafares, mesmo sendo uma ideia simples, m
 Detalhes do app:
 * Login com o Google já identificando sua foto de perfil e seu nome.
 * Lista de taferes são organizadas por datas.
-* Filtro de mostar ou não tarefas concluidas.
+* Filtro de mostrar ou não tarefas concluidas.
 * Visual/Design do app bonito e charmoso feito por mim :smile:
 * Barra de progresso das Task.
 
